@@ -150,7 +150,7 @@ import historyForm from './History'
 import timerForm from './Timer'
 import MonitorForm from './Monitor'
 import libraryRestApi from '@/api/library.api'
-import usageApi from '@/api/usage.api'
+// import usageApi from '@/api/usage.api'
 
 const emptyMessage = '数据加载失败'
 const maxGrabCount = 8
@@ -481,7 +481,7 @@ export default {
               message
             })
             this.windowsNotification(`预约失败`, `系统还未开放该时间段 (可能是您的系统时间有误)`)
-            usageApi.grabState(this.userAccount, false, 22, message)
+            // usageApi.grabState(this.userAccount, false, 22, message)
             return
           }
           libraryRestApi.FreeFilters(this.userToken).then((response) => {
@@ -550,10 +550,10 @@ export default {
             showClose: true,
             message: response.data.message ? response.data.message : emptyMessage
           })
-          usageApi.loginState(this.userInfo.account, false, 12, response.data.message)
+          // usageApi.loginState(this.userInfo.account, false, 12, response.data.message)
         }
-      }).catch((error) => {
-        usageApi.loginState(this.userInfo.account, false, 13, error.message)
+      }).catch(() => {
+        // usageApi.loginState(this.userInfo.account, false, 13, error.message)
       })
     },
     login () {
@@ -566,10 +566,10 @@ export default {
             message: '(提前) 登录成功'
           })
         } else {
-          usageApi.loginState(this.userInfo.account, false, 14, response.data.message)
+          // usageApi.loginState(this.userInfo.account, false, 14, response.data.message)
         }
-      }).catch((error) => {
-        usageApi.loginState(this.userInfo.account, false, 15, error.message)
+      }).catch(() => {
+        // usageApi.loginState(this.userInfo.account, false, 15, error.message)
       })
     },
     reserveSeat (beginTime, endTime, seatNum, date, userToken, cancelCurrent = false) {
@@ -592,11 +592,11 @@ export default {
                       message: '取消已有预约'
                     })
                   } else {
-                    usageApi.grabState(this.userAccount, false, 13, `取消当前预约失败：${response.data.message}`)
+                    // usageApi.grabState(this.userAccount, false, 13, `取消当前预约失败：${response.data.message}`)
                   }
                   this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
-                }).catch((error) => {
-                  usageApi.grabState(this.userAccount, false, 14, `取消当前预约出现异常：${error.message}`)
+                }).catch(() => {
+                  // usageApi.grabState(this.userAccount, false, 14, `取消当前预约出现异常：${error.message}`)
                   this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
                 })
               } else {
@@ -609,24 +609,24 @@ export default {
                       message: response.data.message ? response.data.message : emptyMessage
                     })
                   } else {
-                    usageApi.grabState(this.userAccount, false, 15, `终止当前使用失败：${response.data.message}`)
+                    // usageApi.grabState(this.userAccount, false, 15, `终止当前使用失败：${response.data.message}`)
                   }
                   this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
-                }).catch((error) => {
-                  usageApi.grabState(this.userAccount, false, 16, `终止当前使用异常：${error.message}`)
+                }).catch(() => {
+                  // usageApi.grabState(this.userAccount, false, 16, `终止当前使用异常：${error.message}`)
                   this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
                 })
               }
             } else {
-              usageApi.grabState(this.userAccount, false, 17, '准备取消预约，但当前无预约或正在使用的座位')
+              // usageApi.grabState(this.userAccount, false, 17, '准备取消预约，但当前无预约或正在使用的座位')
               this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
             }
           } else {
-            usageApi.grabState(this.userAccount, false, 18, `获取预约历史失败：${response.data.message}`)
+            // usageApi.grabState(this.userAccount, false, 18, `获取预约历史失败：${response.data.message}`)
             this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
           }
-        }).catch((error) => {
-          usageApi.grabState(this.userAccount, false, 19, `获取预约历史出现异常：${error.message}`)
+        }).catch(() => {
+          // usageApi.grabState(this.userAccount, false, 19, `获取预约历史出现异常：${error.message}`)
           this.reserveSeat(beginTime, endTime, seatNum, date, this.userToken)
         })
         return
@@ -647,7 +647,7 @@ export default {
             duration: 0
           })
           this.windowsNotification(`预约成功`, `位置：${response.data.data.location}(${response.data.data.onDate} | ${response.data.data.begin} - ${response.data.data.end})`)
-          usageApi.grabState(this.userAccount, true, 6)
+          // usageApi.grabState(this.userAccount, true, 6)
         } else {
           if (response.data.code === 1 || response.data.code === '1') {
             // 位置不可用，如果未达抢座上限则继续抢
@@ -674,7 +674,7 @@ export default {
                 message: `抢座失败：达到抢座尝试上限(${maxGrabCount})，结束抢座`
               })
               this.windowsNotification('抢座失败', `达到抢座尝试上限(${maxGrabCount})，结束抢座`)
-              usageApi.grabState(this.userAccount, false, 7, `抢座失败：达到抢座尝试上限(${maxGrabCount})，结束抢座`)
+              // usageApi.grabState(this.userAccount, false, 7, `抢座失败：达到抢座尝试上限(${maxGrabCount})，结束抢座`)
             } else if (newSeatId === -1) {
               this.$store.dispatch('updateTimer', 'fail')
               this.$message({
@@ -684,7 +684,7 @@ export default {
                 message: '抢座失败：该房间在指定的时间段内没有空闲位置'
               })
               this.windowsNotification('抢座失败', '该房间在指定的时间段内没有空闲位置')
-              usageApi.grabState(this.userAccount, false, 8, `抢座失败：该房间在指定的时间段内没有空闲位置(${date} ${beginTime}-${endTime})`)
+              // usageApi.grabState(this.userAccount, false, 8, `抢座失败：该房间在指定的时间段内没有空闲位置(${date} ${beginTime}-${endTime})`)
             } else if (!this.stopGrab) {
               this.$store.dispatch('updateTimer', 'working')
               // 打印信息
@@ -722,7 +722,7 @@ export default {
               message: response.data.message ? response.data.message : emptyMessage
             })
             this.windowsNotification('抢座失败', response.data.message ? response.data.message : emptyMessage)
-            usageApi.grabState(this.userAccount, false, 10, response.data.message)
+            // usageApi.grabState(this.userAccount, false, 10, response.data.message)
           } else {
             // 其他
             this.$store.dispatch('updateTimer', 'fail')
@@ -733,12 +733,12 @@ export default {
               message: response.data.message ? response.data.message : emptyMessage
             })
             this.windowsNotification('抢座失败', (response.data.message ? response.data.message : emptyMessage) + response.data.code)
-            usageApi.grabState(this.userAccount, false, 11, response.data.message)
+            // usageApi.grabState(this.userAccount, false, 11, response.data.message)
           }
         }
-      }).catch((error) => {
+      }).catch(() => {
         this.$store.dispatch('updateTimer', 'fail')
-        usageApi.grabState(this.userAccount, false, 20, `预约出现异常：${error.message}`)
+        // usageApi.grabState(this.userAccount, false, 20, `预约出现异常：${error.message}`)
       })
     },
     // 获得预定房间内未尝试过的 座位 id 号，全部尝试完之后返回 -1

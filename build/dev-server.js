@@ -3,6 +3,7 @@ var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
 var express = require('express')
+var cors = require('cors')
 var webpack = require('webpack')
 var opn = require('opn')
 var { say } = require('cfonts')
@@ -32,6 +33,8 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler)
 compiler.plugin('watch-run', (compilation, done) => {
   done()
 })
+
+app.use(cors())
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {

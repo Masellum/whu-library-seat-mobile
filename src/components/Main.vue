@@ -7,6 +7,13 @@
     <main-footer :bodyMode="bodyMode" @iconClicked="footerIconClicked($event)"></main-footer>
   </div>
   <block-form v-else :message="lockInfo.message" :time="lockInfo.time"></block-form>
+  <!-- <div class="main">
+    <main-header></main-header>
+    <transition name="el-fade-in-linear">
+      <main-body :showMode="bodyMode"></main-body>
+    </transition>
+    <main-footer :bodyMode="bodyMode" @iconClicked="footerIconClicked($event)"></main-footer>
+  </div> -->
 </template>
 
 <script>
@@ -14,7 +21,7 @@ import { mapGetters } from 'vuex'
 import MainHeader from './Header'
 import MainFooter from './Footer'
 import MainBody from './Body'
-import BlockForm from './Utils/blockForm'
+// import BlockForm from './Utils/blockForm'
 
 export default {
   data () {
@@ -25,8 +32,8 @@ export default {
   components: {
     MainHeader,
     MainBody,
-    MainFooter,
-    BlockForm
+    MainFooter
+    // BlockForm
   },
   computed: {
     ...mapGetters([
@@ -35,10 +42,26 @@ export default {
       'lockInfo'
     ])
   },
-  mounted () {
-    this.$store.dispatch('checkIfLocked')
-    this.$store.dispatch('checkIfAuthed')
-  },
+  // mounted () {
+  //     Vue.cordova.plugins.PowerOptimization.IsIgnoringBatteryOptimizations().then((result) => {
+  //       if (result) {
+  //         return Vue.cordova.plugins.PowerOptimization.RequestOptimizations()
+  //       } else {
+  //         return Promise.reject()
+  //       }
+  //     }).then((result) => {
+  //       return Vue.cordova.plugins.RequestOptimizationsMenu()
+  //     })
+  //     Vue.cordova.plugins.PowerOptimization.HaveProtectedAppsCheck().then((result) => {
+  //       if (result) {
+  //         return Vue.cordova.plugins.PowerOptimization.ProtectedAppCheck()
+  //       }
+  //     }).catch(() => {})
+  // },
+  // mounted () {
+  //   this.$store.dispatch('checkIfLocked')
+  //   this.$store.dispatch('checkIfAuthed')
+  // },
   methods: {
     footerIconClicked (param) {
       if (param === 'user') {

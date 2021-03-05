@@ -11,7 +11,7 @@
       ref="userInfo"
       class="flex-row">
       <div style="margin:0 20px;">
-        <div class="form-item" :style="{'margin-bottom': !authFormVisible ? '40px': '10px'}" v-if="!hasToken">
+        <!-- <div class="form-item" :style="{'margin-bottom': !authFormVisible ? '40px': '10px'}" v-if="!hasToken">
           <svg v-if="!authFormVisible" version="1.1" class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.004 512.004" style="enable-background:new 0 0 512.004 512.004;" xml:space="preserve"><g>
             <path d="M291.057,242.811c1.51,2.953,4.514,4.659,7.62,4.659c1.297,0,2.628-0.299,3.866-0.93 c0.503-0.256,50.731-25.771,75.503-33.596c4.489-1.425,6.98-6.221,5.555-10.709c-1.417-4.489-6.178-6.989-10.709-5.572 c-26.095,8.252-75.981,33.596-78.097,34.671C290.596,233.467,288.924,238.605,291.057,242.811z"/>
             <path d="M298.677,145.071c1.297,0,2.628-0.299,3.866-0.93c0.503-0.256,50.731-25.771,75.503-33.596 c4.489-1.425,6.98-6.221,5.555-10.709c-1.417-4.489-6.178-6.989-10.709-5.572c-26.095,8.252-75.981,33.596-78.097,34.671 c-4.198,2.133-5.871,7.27-3.738,11.477C292.567,143.364,295.571,145.071,298.677,145.071z"/>
@@ -29,9 +29,10 @@
             <path d="M5 15 L5 30 27 30 27 15 Z M9 15 C9 9 9 5 16 5 23 5 23 9 23 15 M16 20 L16 23" />
             <circle cx="16" cy="24" r="1" />
           </svg>
-        </div>
-        <authen-form v-if="authFormVisible"></authen-form>
-        <div v-else>
+        </div> -->
+        <!-- <authen-form v-if="authFormVisible"></authen-form> -->
+        <!-- <div v-else> -->
+        <div>
           <el-form-item inline prop="account" class="form-item" style="margin-bottom: 15px;">
             <el-row :gutter="0" align="middle">
               <el-col :span="3">
@@ -45,7 +46,8 @@
                   <svg v-if="!isLover" class="icon" :class="accountLocked?'icon-locked':'icon-unlocked'" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                     <path d="M5 15 L5 30 27 30 27 15 Z M9 15 C9 9 9 5 16 5 23 5 23 9 23 15 M16 20 L16 23" /><circle cx="16" cy="24" r="1" />
                   </svg>
-                  <svg v-else class="icon" :class="accountLocked?'heart-locked':'heart-unlocked'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg>
+                  <!-- <svg v-else class="icon" :class="accountLocked?'heart-locked':'heart-unlocked'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg> -->
+                  <svg v-else class="icon" :class="accountLocked?'heart-locked':'heart-unlocked'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 -10 511.98685 511" xml:space="preserve"><g><path d="m114.59375 491.140625c-5.609375 0-11.179688-1.75-15.933594-5.1875-8.855468-6.417969-12.992187-17.449219-10.582031-28.09375l32.9375-145.089844-111.703125-97.960937c-8.210938-7.167969-11.347656-18.519532-7.976562-28.90625 3.371093-10.367188 12.542968-17.707032 23.402343-18.710938l147.796875-13.417968 58.433594-136.746094c4.308594-10.046875 14.121094-16.535156 25.023438-16.535156 10.902343 0 20.714843 6.488281 25.023437 16.511718l58.433594 136.769532 147.773437 13.417968c10.882813.980469 20.054688 8.34375 23.425782 18.710938 3.371093 10.367187.253906 21.738281-7.957032 28.90625l-111.703125 97.941406 32.9375 145.085938c2.414063 10.667968-1.726562 21.699218-10.578125 28.097656-8.832031 6.398437-20.609375 6.890625-29.910156 1.300781l-127.445312-76.160156-127.445313 76.203125c-4.308594 2.558594-9.109375 3.863281-13.953125 3.863281zm141.398438-112.875c4.84375 0 9.640624 1.300781 13.953124 3.859375l120.277344 71.9375-31.085937-136.941406c-2.21875-9.746094 1.089843-19.921875 8.621093-26.515625l105.472657-92.5-139.542969-12.671875c-10.046875-.917969-18.6875-7.234375-22.613281-16.492188l-55.082031-129.046875-55.148438 129.066407c-3.882812 9.195312-12.523438 15.511718-22.546875 16.429687l-139.5625 12.671875 105.46875 92.5c7.554687 6.613281 10.859375 16.769531 8.621094 26.539062l-31.0625 136.9375 120.277343-71.914062c4.308594-2.558594 9.109376-3.859375 13.953126-3.859375zm-84.585938-221.847656s0 .023437-.023438.042969zm169.128906-.0625.023438.042969c0-.023438 0-.023438-.023438-.042969zm0 0"/></g></svg>
                 </el-button>
               </el-col>
             </el-row>
@@ -64,7 +66,8 @@
                     <path d="M5 15 L5 30 27 30 27 15 Z M9 15 C9 9 9 5 16 5 23 5 23 9 23 15 M16 20 L16 23" />
                     <circle cx="16" cy="24" r="1" />
                   </svg>
-                  <svg v-else class="icon" :class="passwdLocked?'heart-locked':'heart-unlocked'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg>
+                  <!-- <svg v-else class="icon" :class="passwdLocked?'heart-locked':'heart-unlocked'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg> -->
+                  <svg v-else class="icon" :class="passwdLocked?'heart-locked':'heart-unlocked'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 -10 511.98685 511" xml:space="preserve"><g><path d="m114.59375 491.140625c-5.609375 0-11.179688-1.75-15.933594-5.1875-8.855468-6.417969-12.992187-17.449219-10.582031-28.09375l32.9375-145.089844-111.703125-97.960937c-8.210938-7.167969-11.347656-18.519532-7.976562-28.90625 3.371093-10.367188 12.542968-17.707032 23.402343-18.710938l147.796875-13.417968 58.433594-136.746094c4.308594-10.046875 14.121094-16.535156 25.023438-16.535156 10.902343 0 20.714843 6.488281 25.023437 16.511718l58.433594 136.769532 147.773437 13.417968c10.882813.980469 20.054688 8.34375 23.425782 18.710938 3.371093 10.367187.253906 21.738281-7.957032 28.90625l-111.703125 97.941406 32.9375 145.085938c2.414063 10.667968-1.726562 21.699218-10.578125 28.097656-8.832031 6.398437-20.609375 6.890625-29.910156 1.300781l-127.445312-76.160156-127.445313 76.203125c-4.308594 2.558594-9.109375 3.863281-13.953125 3.863281zm141.398438-112.875c4.84375 0 9.640624 1.300781 13.953124 3.859375l120.277344 71.9375-31.085937-136.941406c-2.21875-9.746094 1.089843-19.921875 8.621093-26.515625l105.472657-92.5-139.542969-12.671875c-10.046875-.917969-18.6875-7.234375-22.613281-16.492188l-55.082031-129.046875-55.148438 129.066407c-3.882812 9.195312-12.523438 15.511718-22.546875 16.429687l-139.5625 12.671875 105.46875 92.5c7.554687 6.613281 10.859375 16.769531 8.621094 26.539062l-31.0625 136.9375 120.277343-71.914062c4.308594-2.558594 9.109376-3.859375 13.953126-3.859375zm-84.585938-221.847656s0 .023437-.023438.042969zm169.128906-.0625.023438.042969c0-.023438 0-.023438-.023438-.042969zm0 0"/></g></svg>
                 </el-button>
               </el-col>
             </el-row>
@@ -90,12 +93,12 @@
 <script>
 import { mapGetters } from 'vuex'
 import settingsForm from './Settings'
-import authenForm from './Authen'
-import gitcontentsApi from '@/api/gitcontents.api'
-import usageApi from '@/api/usage.api'
+// import authenForm from './Authen'
+// import gitcontentsApi from '@/api/gitcontents.api'
+// import usageApi from '@/api/usage.api'
 import libraryRestApi from '@/api/library.api'
-import md5 from 'js-md5'
-import store from '@/nedb'
+// import md5 from 'js-md5'
+// import store from '@/nedb'
 
 const emptyMessage = '数据加载失败'
 
@@ -113,7 +116,8 @@ export default {
     }
   },
   components: {
-    settingsForm, authenForm
+    // settingsForm, authenForm
+    settingsForm
   },
   computed: {
     ...mapGetters([
@@ -121,25 +125,27 @@ export default {
       'userPasswd',
       'hasToken',
       'userToken',
-      'announceViewed',
-      'authInfo',
-      'authFormVisible',
-      'githubUserIconUrl'
+      'announceViewed'
+      // 'authInfo',
+      // 'authFormVisible',
+      // 'githubUserIconUrl'
     ]),
     btnText () {
       return this.workMode === 'none' ? '登录' : (this.workMode === 'validation' ? '用户验证' : '正在登录')
     },
     isLover () {
-      return this.userInfo.account === 2017302590175
+      // return this.userInfo.account === 2017302590175
+      return this.userInfo.account === 2020301131013
+      // return this.userInfo.account === 2020302181178
     }
   },
-  watch: {
-    authFormVisible () {
-      if (this.authFormVisible) {
-        this.settingsVisible = false
-      }
-    }
-  },
+  // watch: {
+  //   authFormVisible () {
+  //     if (this.authFormVisible) {
+  //       this.settingsVisible = false
+  //     }
+  //   }
+  // },
   mounted () {
     this.userInfo.account = this.userAccount
     this.userInfo.passwd = this.userPasswd
@@ -153,9 +159,9 @@ export default {
   methods: {
     openSettings () {
       this.settingsVisible = !this.settingsVisible
-      if (this.settingsVisible) {
-        this.$store.commit('TRIGGER_AUTH_FORM', false)
-      }
+      // if (this.settingsVisible) {
+      //   this.$store.commit('TRIGGER_AUTH_FORM', false)
+      // }
     },
     showInfo (message) {
       this.$message({
@@ -248,25 +254,25 @@ export default {
       this.$store.dispatch('updateFreeDates')
       this.$nextTick(() => {
         this.$store.dispatch('setToken', token)
-        if (this.isLover) {
-          this.$message({
-            iconClass: 'null',
-            duration: 2000,
-            dangerouslyUseHTMLString: true,
-            message: '<div><svg style="width:16px;fill:#fd4e71;margin-right:6px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg><span style="font-size: 16px;margin:0 0 4px 0;cursor:default">欢迎小仙女</span><svg style="width:16px;fill:#fd4e71;margin-left:6px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg></div>',
-            customClass: 'heart-message'
-          })
-        }
+        // if (this.isLover) {
+        //   this.$message({
+        //     iconClass: 'null',
+        //     duration: 2000,
+        //     dangerouslyUseHTMLString: true,
+        //     message: '<div><svg style="width:16px;fill:#fd4e71;margin-right:6px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg><span style="font-size: 16px;margin:0 0 4px 0;cursor:default">欢迎小仙女</span><svg style="width:16px;fill:#fd4e71;margin-left:6px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 369.486 369.486" xml:space="preserve"><g><path d="M184.743,357.351c-3.478,0-6.798-1.449-9.164-3.998l-147.67-159.16c-0.038-0.041-0.076-0.082-0.113-0.123 C9.871,174.223,0,147.921,0,120.008c0-27.914,9.871-54.215,27.796-74.061l2.244-2.484c18.246-20.201,42.608-31.327,68.599-31.327 s50.354,11.126,68.601,31.328l17.503,19.38l17.503-19.379c18.246-20.202,42.608-31.328,68.6-31.328s50.354,11.126,68.601,31.329 l2.241,2.478c17.928,19.851,27.799,46.152,27.799,74.065s-9.872,54.215-27.796,74.061c-0.037,0.043-0.075,0.084-0.113,0.125 l-147.671,159.16C191.541,355.901,188.221,357.351,184.743,357.351z M46.295,177.252l138.448,149.219l138.448-149.22 c28.485-31.603,28.467-82.97-0.055-114.549l-2.239-2.478c-13.449-14.891-31.224-23.09-50.051-23.09 c-18.828,0-36.603,8.199-50.048,23.085L194.02,89.869c-2.369,2.624-5.74,4.121-9.275,4.121s-6.906-1.497-9.276-4.121 l-26.779-29.648c-13.446-14.887-31.22-23.086-50.048-23.086S62.039,45.333,48.594,60.22l-2.244,2.484 C17.828,94.283,17.809,145.65,46.295,177.252z"/></g></svg></div>',
+        //     customClass: 'heart-message'
+        //   })
+        // }
       })
       // 检查公告
-      gitcontentsApi.announce().then((response) => {
-        if (response.status === 200) {
-          if (md5(response.data) !== store.get('announceMd5', '') && this.announceViewed) {
-            this.$store.dispatch('setAnnounceViewed', false)
-          }
-        }
-      }).catch(() => {})
-      usageApi.loginState(this.userInfo.account, true, 4)
+      // gitcontentsApi.announce().then((response) => {
+      //   if (response.status === 200) {
+      //     if (md5(response.data) !== store.get('announceMd5', '') && this.announceViewed) {
+      //       this.$store.dispatch('setAnnounceViewed', false)
+      //     }
+      //   }
+      // }).catch(() => {})
+      // usageApi.loginState(this.userInfo.account, true, 4)
     },
     loginFlowErrorHandler (error) {
       this.$store.dispatch('setToken', null)
@@ -274,10 +280,10 @@ export default {
     },
     validateUser () {
       return new Promise((resolve, reject) => {
-        if (this.authInfo.githubAuthToken && this.authInfo.haveStaredRepo) {
-          resolve()
-          return true
-        }
+        // if (this.authInfo.githubAuthToken && this.authInfo.haveStaredRepo) {
+        //   resolve()
+        //   return true
+        // }
         if (this.userInfo.account === null || this.userInfo.account === '') {
           this.showWarning('学号不能为空')
           reject(Error('学号不能为空'))
@@ -288,60 +294,61 @@ export default {
           reject(Error('密码不能为空'))
           return false
         }
-        gitcontentsApi.validateUser().then((response) => {
-          if (response.data.status === 'success') {
-            var users = response.data.data.users
-            var groups = response.data.data.groups
-            var userItem = null
-            var groupItem = null
-            for (let index = 0; index < users.length; index++) {
-              if (users[index].accountMd5 === md5(this.userInfo.account.toString())) {
-                userItem = users[index]
-                break
-              }
-            }
-            // 用户验证
-            const validateFailMessage = '对不起，您未在用户白名单中，只能通过 GitHub Star 授权使用本软件，具体请点击软件下方的钥匙按钮查看'
-            if (userItem === null) {
-              this.showError(validateFailMessage)
-              usageApi.loginState(this.userInfo.account, false, 0)
-              reject(Error(validateFailMessage))
-              return false
-            } else if (!userItem.status) {
-              this.showError(validateFailMessage)
-              usageApi.loginState(this.userInfo.account, false, 1, validateFailMessage)
-              reject(Error(validateFailMessage))
-              return false
-            }
-            for (let index = 0; index < groups.length; index++) {
-              if (groups[index].id === userItem.groupId) {
-                groupItem = groups[index]
-                break
-              }
-            }
-            // 组验证
-            if (groupItem === null) {
-              this.showError(validateFailMessage)
-              usageApi.loginState(this.userInfo.account, false, 2, validateFailMessage)
-              reject(Error(validateFailMessage))
-              return false
-            } else if (!groupItem.status) {
-              this.showError(validateFailMessage)
-              usageApi.loginState(this.userInfo.account, false, 3, validateFailMessage)
-              reject(Error(validateFailMessage))
-              return false
-            }
-            resolve()
-            return true
-          } else {
-            reject(Error('管理员已关闭白名单认证方式，只能通过 GitHub Star 授权使用本软件，具体请点击软件下方的钥匙按钮查看'))
-            return false
-          }
-        }).catch(() => {
-          this.showInfo('白名单加载失败，开启免验证登录')
-          resolve()
-          return true
-        })
+        resolve()
+        // gitcontentsApi.validateUser().then((response) => {
+        //   if (response.data.status === 'success') {
+        //     var users = response.data.data.users
+        //     var groups = response.data.data.groups
+        //     var userItem = null
+        //     var groupItem = null
+        //     for (let index = 0; index < users.length; index++) {
+        //       if (users[index].accountMd5 === md5(this.userInfo.account.toString())) {
+        //         userItem = users[index]
+        //         break
+        //       }
+        //     }
+        //     // 用户验证
+        //     const validateFailMessage = '对不起，您未在用户白名单中，只能通过 GitHub Star 授权使用本软件，具体请点击软件下方的钥匙按钮查看'
+        //     if (userItem === null) {
+        //       this.showError(validateFailMessage)
+        //       usageApi.loginState(this.userInfo.account, false, 0)
+        //       reject(Error(validateFailMessage))
+        //       return false
+        //     } else if (!userItem.status) {
+        //       this.showError(validateFailMessage)
+        //       usageApi.loginState(this.userInfo.account, false, 1, validateFailMessage)
+        //       reject(Error(validateFailMessage))
+        //       return false
+        //     }
+        //     for (let index = 0; index < groups.length; index++) {
+        //       if (groups[index].id === userItem.groupId) {
+        //         groupItem = groups[index]
+        //         break
+        //       }
+        //     }
+        //     // 组验证
+        //     if (groupItem === null) {
+        //       this.showError(validateFailMessage)
+        //       usageApi.loginState(this.userInfo.account, false, 2, validateFailMessage)
+        //       reject(Error(validateFailMessage))
+        //       return false
+        //     } else if (!groupItem.status) {
+        //       this.showError(validateFailMessage)
+        //       usageApi.loginState(this.userInfo.account, false, 3, validateFailMessage)
+        //       reject(Error(validateFailMessage))
+        //       return false
+        //     }
+        //     resolve()
+        //     return true
+        //   } else {
+        //     reject(Error('管理员已关闭白名单认证方式，只能通过 GitHub Star 授权使用本软件，具体请点击软件下方的钥匙按钮查看'))
+        //     return false
+        //   }
+        // }).catch(() => {
+        //   this.showInfo('白名单加载失败，开启免验证登录')
+        //   resolve()
+        //   return true
+        // })
       })
     },
     login () {
@@ -369,7 +376,7 @@ export default {
               showClose: true,
               message: response.data.message ? response.data.message : emptyMessage
             })
-            usageApi.loginState(this.userInfo.account, false, 5, response.data.message)
+            // usageApi.loginState(this.userInfo.account, false, 5, response.data.message)
           }
         }).catch((error) => {
           reject(error)
@@ -391,7 +398,7 @@ export default {
               showClose: true,
               message: response.data.message ? response.data.message : emptyMessage
             })
-            usageApi.loginState(this.userInfo.account, false, 6, response.data.message)
+            // usageApi.loginState(this.userInfo.account, false, 6, response.data.message)
           }
         }).catch((error) => {
           reject(error)
