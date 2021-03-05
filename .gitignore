@@ -1,4 +1,6 @@
 .DS_Store
+.vscode
+typings
 coverage
 npm-debug.log
 npm-debug.log.*
